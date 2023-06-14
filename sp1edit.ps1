@@ -175,5 +175,5 @@ function lalalala
 	$BindingFlags = [Reflection.BindingFlags] "Public,Static"
 	$a = @()
 	$Assembly.GetType("Costura.AssemblyLoader", $false).GetMethod("Attach", $BindingFlags).Invoke($Null, @())
-	$Assembly.GetType("Sharphound.Program").GetMethod("InvokeSharpHound").Invoke($Null, @(,$passed))
+	$Assembly.GetType("lalalala.Program").GetMethod("lalalala").Invoke($Null, @(,$passed))
 }
