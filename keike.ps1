@@ -136,7 +136,7 @@ function Invoke-BloodHound
         [Alias("v")]
         [ValidateRange(0, 5)]
         [Int]
-        [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA"))rbosity,
+        verbosity,
 
         [Alias("h")]
         [Switch]
@@ -147,7 +147,7 @@ function Invoke-BloodHound
     )
 
     $vars = New-Object System.Collections.Generic.List[System.Object]
-    [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")) = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA"))
+   
     
     if(!([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).ContainsKey("help") -or [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).ContainsKey("version"))){
         [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).Keys | % {
