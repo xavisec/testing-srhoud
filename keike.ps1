@@ -147,7 +147,7 @@ function Invoke-BloodHound
     )
 
     $vars = New-Object System.Collections.Generic.List[System.Object]
-    $ve = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JFBTQm91bmRQYXJhbWV0ZXJz="))
+    $ve = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("UABTAEIAbwB1AG4AZABQAGEAcgBhAG0AZQB0AGUAcgBzAA"))
     
     if(!($ve.ContainsKey("help") -or $ve.ContainsKey("version"))){
         $ve.Keys | % {
