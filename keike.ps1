@@ -136,14 +136,14 @@ function Invoke-BloodHound
         [Alias("v")]
         [ValidateRange(0, 5)]
         [Int]
-        verbosity,
+        $Verbosity,
 
         [Alias("h")]
         [Switch]
         $Help,
 
         [Switch]
-        version
+        $Version
     )
 
     $vars = New-Object System.Collections.Generic.List[System.Object]
