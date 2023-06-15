@@ -136,35 +136,35 @@ function Invoke-BloodHound
         [Alias("v")]
         [ValidateRange(0, 5)]
         [Int]
-        $Verbosity,
+        [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA"))rbosity,
 
         [Alias("h")]
         [Switch]
         $Help,
 
         [Switch]
-        $Version
+        [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA"))rsion
     )
 
     $vars = New-Object System.Collections.Generic.List[System.Object]
-    $ve = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA"))
+    [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")) = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA"))
     
-    if(!($ve.ContainsKey("help") -or $ve.ContainsKey("version"))){
-        $ve.Keys | % {
+    if(!([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).ContainsKey("help") -or [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).ContainsKey("version"))){
+        [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).Keys | % {
             if ($_ -notmatch "verbosity"){
                 $vars.add("--$_")
-                if($ve.item($_).gettype().name -notmatch "switch"){
-                    $vars.add($ve.item($_))
+                if([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).item($_).gettype().name -notmatch "switch"){
+                    $vars.add([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).item($_))
                 }
             }
             elseif ($_ -match "verbosity") {
                 $vars.add("-v")
-                $vars.add($ve.item($_))
+                $vars.add([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).item($_))
             }
         }
     }
     else {
-        $ve.Keys |? {$_ -match "help" -or $_ -match "version"}| % {
+        [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).Keys |? {$_ -match "help" -or $_ -match "version"}| % {
             $vars.add("--$_")
         }
     }
