@@ -149,25 +149,7 @@ function Invoke-BloodHound
     $vars = New-Object System.Collections.Generic.List[System.Object]
    
     
-    if(!([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).ContainsKey("help") -or [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).ContainsKey("version"))){
-        [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).Keys | % {
-            if ($_ -notmatch "verbosity"){
-                $vars.add("--$_")
-                if([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).item($_).gettype().name -notmatch "switch"){
-                    $vars.add([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).item($_))
-                }
-            }
-            elseif ($_ -match "verbosity") {
-                $vars.add("-v")
-                $vars.add([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).item($_))
-            }
-        }
-    }
-    else {
-        [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA")).Keys |? {$_ -match "help" -or $_ -match "version"}| % {
-            $vars.add("--$_")
-        }
-    }
+    
     
     $passed = [string[]]$vars.ToArray()
 
