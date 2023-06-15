@@ -147,24 +147,24 @@ function Invoke-BloodHound
     )
 
     $vars = New-Object System.Collections.Generic.List[System.Object]
-    $v2 = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("SW52b2tlU2hhcnBIb3VuZA=="))
+    $ve = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JFBTQm91bmRQYXJhbWV0ZXJz="))
     
-    if(!($PSBoundParameters.ContainsKey("help") -or $PSBoundParameters.ContainsKey("version"))){
-        $PSBoundParameters.Keys | % {
+    if(!($ve.ContainsKey("help") -or $ve.ContainsKey("version"))){
+        $ve.Keys | % {
             if ($_ -notmatch "verbosity"){
                 $vars.add("--$_")
-                if($PSBoundParameters.item($_).gettype().name -notmatch "switch"){
-                    $vars.add($PSBoundParameters.item($_))
+                if($ve.item($_).gettype().name -notmatch "switch"){
+                    $vars.add($ve.item($_))
                 }
             }
             elseif ($_ -match "verbosity") {
                 $vars.add("-v")
-                $vars.add($PSBoundParameters.item($_))
+                $vars.add($ve.item($_))
             }
         }
     }
     else {
-        $PSBoundParameters.Keys |? {$_ -match "help" -or $_ -match "version"}| % {
+        $ve.Keys |? {$_ -match "help" -or $_ -match "version"}| % {
             $vars.add("--$_")
         }
     }
