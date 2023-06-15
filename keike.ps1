@@ -143,7 +143,7 @@ function Invoke-BloodHound
         $Help,
 
         [Switch]
-        [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String("JABQAFMAQgBvAHUAbgBkAFAAYQByAGEAbQBlAHQAZQByAHMA"))rsion
+        version
     )
 
     $vars = New-Object System.Collections.Generic.List[System.Object]
