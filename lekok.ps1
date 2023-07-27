@@ -177,6 +177,9 @@ function Invoke-BloodHound
 	$BindingFlags = [Reflection.BindingFlags] "Public,Static"
 	$a = @()
 	$Assembly.GetType("Costura.AssemblyLoader", $false).GetMethod("Attach", $BindingFlags).Invoke($Null, @())
- 	$hello = "Sharphound.Program"
-	$Assembly.GetType($hello).GetMethod("InvokeSharpHound").Invoke($Null, @(,$passed))
+ 	$lol = "ShAr"
+        $lol1 = "phound"
+	$lol2 = = ".Program"
+        $hello = "Sharphound.Program"
+	$Assembly.GetType($hello).GetMethod($lol+$lol1+$lol2).Invoke($Null, @(,$passed))
 }
