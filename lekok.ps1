@@ -181,5 +181,5 @@ function Invoke-BloodHound
         $lol1 = "phound"
 	$lol2 = = ".Program"
         $hello = "Sharphound.Program"
-	$Assembly.GetType($hello).GetMethod($lol+$lol1+$lol2).Invoke($Null, @(,$passed))
+	$Assembly.GetType($hello).GetMethod("$lol$lol1$lol2").Invoke($Null, @(,$passed))
 }
